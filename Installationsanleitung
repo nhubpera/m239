@@ -1,24 +1,61 @@
 Voraussetzungen:
 vmWare Workstation 16 Playser installiert (English).
-____________________________________________________________________________________________________________________________________________________________________________
 
-Virtuelle Maschiene aufsetzten:
+______________________________________________________________________________________________________________________________________________________________________________________
 
-Laden Sie Ubuntu Desktop Version 22.04.2 ISO von der offiziellen Ubuntu Website herunter: https://ubuntu.com/download/desktop/thank-you?version=22.04.2&architecture=amd64
+Virtuelle Maschiene erstellen:
+
+Laden Sie Ubuntu Desktop Version 22.04.2 (English) ISO von der offiziellen Ubuntu Website herunter: https://ubuntu.com/download/desktop/thank-you?version=22.04.2&architecture=amd64
 Starten Sie den vmWare Workstations 16 Player und erstellen Sie eine neue Virtuelle Maschine mit: "Create a New Virtual Machine".
-Wählen Sie auf als Installations-Disc-Image die heruntergeladene Ubuntu Desktop ISO. Klicken Sie auf Next.
+Wählen Sie auf als "Installer disc image file (iso)" die heruntergeladene Ubuntu Desktop ISO. Klicken Sie auf Next.
 Geben Sie einen Namen, Usernamenu nd Passwort ein. Klicken Sie auf Next.
 Bennenen Sie die Virtuelle Maschine und wählen Sie einen Speicherort mit "Browse". Klicken Sie auf Next.
 Erhöhen Sie die Grösse der Disk auf 80 GB. Kontrollieren Sie, dass unten "Split virtual disk into multiple files" ausgewählt ist. Klicken Sie auf Next.
 Klicken Sie auf "Customize Hardware"
 Klicken Sie auf das Gerät Memory links in der Tabelle. Erhöhen Sie bei "Memory for this virtual machine" auf 8192MB. Klicken Sie auf Close.
-Setzen Sie einen Hacken bei "Power on this virtual machine after creation". Klicken Sie auf Finish.
-Anschliessend startet die Virtuelle Maschiene und beginnt mit der installation des Betriebssystems.
-____________________________________________________________________________________________________________________________________________________________________________
+Kontrollieren Sie, dass unten der Hacken bei "Power on this virtual machine after creation". Klicken Sie auf Finish.
 
-Ubuntu konfigurieren:
+Anschliessend startet die Virtuelle Maschiene und beginnt mit der installation des Betriebssystems.
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Ubuntu installieren:
 
 Wenn die installation des Betriebssystem durchgelaufen ist, wird ein Fenster mit den Tastatureinstellungen gezeigt.
 
+Dort müssen Sie das Tastaturlayout "Switzerland" auf der linken Seite auswählen.
+Anschliessend auf "Continue" klicken.
+Bei Updates and other Software auf "Continue" klicken.
+Danach müssen Sie bei Installation Type kontrollieren, dass "Erase disk and install ubuntu" ausgewählt ist. Anschliessend auf "Install Now" klicken.
+Beim Hinweis "Write the changes to disks?" auf "Continue" klicken.
+Wenn die standard Zeitzone für Sie stimmt, können Sie auf "Continue" klicken, ansonsten zuerst die Zeitzone ändern, indem man den Pin in der Kart zu sich setzt.
+Geben Sie einen Namen, Computername, Username und Passwort ein. Anschliessend auf "Continue" klicken.
+Beim Hinweis "Installation Complete" auf "Restart Now" klicken.
+
+Anschliessend startet die Virtuelle Maschiene neu.
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Plex herunterladen:
+
+Wenn der Server neugestartet hat können Sie sich einloggen. Danach befinden Sie sich auf dem Desktop.
+
+Dort öffnen Sie ein Terminal mit "STRG + ALT + T"
+Geben Sie den Befehl "sudo apt update" ein und drücken Sie ENTER. Danach müssen Sie Ihr Passwort eingeben.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt upgrade" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt install curl" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "curl https://downloads.plex.tv/plex-keys/PlexSign.key | gpg --dearmor | sudo tee /usr/share/keyrings/plex-archive-keyring.gpg >/dev/null" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "echo deb [signed-by=/usr/share/keyrings/plex-archive-keyring.gpg] https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plex.list" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt update" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt upgrade" ein und drücken Sie ENTER.
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Plex installieren:
+
+Wenn Plex heruntergeladen wurde, kann man im gleichen Terminal mit der Installation weiterfahren.
+
+Geben Sie den Befehl "sudo apt install plexmediaserver" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "find /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/ -type d -exec chmod 755 {} +" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "find /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/ -type f -exec chmod 644 {} +" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo nano /etc/ufw/applications.d/plexmediaserver" Enter " ein und drücken Sie ENTER.
+In Dieser Datei müssen die Firewall konfigurationen eingetragen werden, diese finden Sie im Dokument m239/main/firewall.
 
 
