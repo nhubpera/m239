@@ -38,7 +38,7 @@ Plex herunterladen:
 
 Wenn der Server neugestartet hat können Sie sich einloggen. Danach befinden Sie sich auf dem Desktop.
 
-Dort öffnen Sie ein Terminal mit "STRG + ALT + T"
+Dort öffnen Sie ein Terminal mit "CTRL + ALT + T"
 Geben Sie den Befehl "sudo apt update" ein und drücken Sie ENTER. Danach müssen Sie Ihr Passwort eingeben.
 Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt upgrade" ein und drücken Sie ENTER.
 Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt install curl" ein und drücken Sie ENTER.
@@ -57,5 +57,12 @@ Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "find /var/lib/plexmedia
 Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "find /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/ -type f -exec chmod 644 {} +" ein und drücken Sie ENTER.
 Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo nano /etc/ufw/applications.d/plexmediaserver" Enter " ein und drücken Sie ENTER.
 In Dieser Datei müssen die Firewall konfigurationen eingetragen werden, diese finden Sie im Dokument m239/main/firewall.
+Wenn diese Einträge hineingeschrieben wurden, dann kann man mit "CTRL + X", dann "Y" und dann ENTER die Datei speichern.
+Anschliessend muss man den Befehl "sudo ufw app update plexmediaserver" eingeben und mit ENTER bestätigen.
+Zudem muss man den Befehl "sudo ufw app update plexmediaserver-additional" eingeben und mit ENTER bestätigen.
+Zum Schluss muss man noch die Firewall neuladen, dies macht man mit dem Befehl "sudo systemctl restart ufw"
+______________________________________________________________________________________________________________________________________________________________________________________
+
+
 
 
