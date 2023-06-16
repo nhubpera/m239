@@ -1,0 +1,24 @@
+Voraussetzungen:
+vmWare Workstation 16 Playser installiert (English).
+____________________________________________________________________________________________________________________________________________________________________________
+
+Virtuelle Maschiene aufsetzten:
+
+Laden Sie Ubuntu Desktop Version 22.04.2 ISO von der offiziellen Ubuntu Website herunter: https://ubuntu.com/download/desktop/thank-you?version=22.04.2&architecture=amd64
+Starten Sie den vmWare Workstations 16 Player und erstellen Sie eine neue Virtuelle Maschine mit: "Create a New Virtual Machine".
+Wählen Sie auf als Installations-Disc-Image die heruntergeladene Ubuntu Desktop ISO. Klicken Sie auf Next.
+Geben Sie einen Namen, Usernamenu nd Passwort ein. Klicken Sie auf Next.
+Bennenen Sie die Virtuelle Maschine und wählen Sie einen Speicherort mit "Browse". Klicken Sie auf Next.
+Erhöhen Sie die Grösse der Disk auf 80 GB. Kontrollieren Sie, dass unten "Split virtual disk into multiple files" ausgewählt ist. Klicken Sie auf Next.
+Klicken Sie auf "Customize Hardware"
+Klicken Sie auf das Gerät Memory links in der Tabelle. Erhöhen Sie bei "Memory for this virtual machine" auf 8192MB. Klicken Sie auf Close.
+Setzen Sie einen Hacken bei "Power on this virtual machine after creation". Klicken Sie auf Finish.
+Anschliessend startet die Virtuelle Maschiene und beginnt mit der installation des Betriebssystems.
+____________________________________________________________________________________________________________________________________________________________________________
+
+Ubuntu konfigurieren:
+
+Wenn die installation des Betriebssystem durchgelaufen ist, wird ein Fenster mit den Tastatureinstellungen gezeigt.
+
+
+
