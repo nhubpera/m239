@@ -73,6 +73,7 @@ Wenn Plex korrekt installiert wurde, kann man nun die Webseite in der Virtuellen
 Dort sieht man nun das Plex Web interface. Loggen Sie Sich mit ihrem Google Account ein. Klicken Sie auf "Continue with Google".
 Anschiessend müssen Sie ihre E-Mail Adresse Ihres Google Accounts eingeben und auf "Next" klicken.
 Danach müssen Sie ihr Passwort von Ihrem Google Accounts eingeben und auf "Next" klicken.
+Bei der Warnung muss man auf "Advanced" klicken, dann herunter scrolen und dann auf "Accept the Risk and continue".
 Nach erfolgreichem einloggen, sehen Sie eine Einführung von Plex. Klicken Sie auf "Got it".
 Anschliessend kann man das Angebot von Plex Pass obe rechts mit dem Kreuz ablehnen.
 ______________________________________________________________________________________________________________________________________________________________________________________
@@ -84,6 +85,25 @@ Sie sollte nun eine Plex Server Setup Webseite im Broswer offen haben. Tragen Si
 Anschliessend kann man eine Bibliothek hinzufügen. Dies überspringen wir mit "Next".
 Schliessen Sie das Setup mit "Finish" ab.
 Zum Schluss müssen Sie nochmals auf "Finish Setup" klicken.
+
+Danach ist man fertig mit der installation und dem Server.
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Plugin installieren
+
+Mit einem Plugin kann man Streaming Dienste wie Disney+, Netflix oder ähnliches in das Plexsortiment nehmen.
+
+Klicken Sie links inder Navigation auf "Discover".
+Auf dieser Seite steht zuoberst Discover. Klicken Sie auf die drei Punkte daneben.
+Wählen Sie "Manage Streaming Services" aus.
+Suchen Sie ihr Streaming Dienst, den Sie einbinden wollen und klicken Sie darauf.
+Anschliessend klicken Sie auf "Save Changes".
+
+Somit kann man nun schauen, was auf diesen Streaming Diensten angeboten und viel geschaut wird.
+
+
+
+
 
 
 
