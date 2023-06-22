@@ -37,8 +37,10 @@ ________________________________________________________________________________
 Plex herunterladen:
 
 Wenn der Server neugestartet hat, können Sie sich mit dem Passwort, das sie zuvor gesetzt haben, einloggen. Danach befinden Sie sich auf dem Desktop.
+Dort stossen Sie auf ein offenes Fenster indem Accounts eingebunden werden können. Drücke Sie auf "Skip", "Next", "Next", "Done" um das ganze zu überspringen.
+Beim Hinweis für Software Updates können Sie auf "Reminde me later" klicken.
 
-Dort öffnen Sie ein Terminal mit "CTRL + ALT + T"
+Danach öffnen Sie ein Terminal mit "CTRL + ALT + T"
 Geben Sie den Befehl "sudo apt update" ein und drücken Sie ENTER. Danach müssen Sie Ihr Passwort eingeben und mit ENTER abschliessen.
 Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt upgrade" ein und drücken Sie ENTER.
 Bei "Do you want to Continue?" müssen Sie Y eingeben und ENTER drücken.
