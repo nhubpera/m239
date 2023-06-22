@@ -1,0 +1,102 @@
+Voraussetzungen:
+vmWare Workstation 16 Player installiert (English).
+
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Virtuelle Maschiene erstellen:
+
+Laden Sie Ubuntu Desktop Version 22.04.2 (English) ISO von der offiziellen Ubuntu Website herunter: https://ubuntu.com/download/desktop/thank-you?version=22.04.2&architecture=amd64
+Starten Sie den vmWare Workstations 16 Player und erstellen Sie eine neue Virtuelle Maschine mit: "Create a New Virtual Machine".
+Wählen Sie auf als "Installer disc image file (iso)" die heruntergeladene Ubuntu Desktop ISO. Klicken Sie auf Next.
+Geben Sie einen Namen, Usernamen und Passwort ein. Klicken Sie auf Next. (Dabei muss der Username in Kleinbuchstaben sein.  )
+Bennenen Sie die Virtuelle Maschine und wählen Sie einen Speicherort mit "Browse". Klicken Sie auf Next.
+Erhöhen Sie die Grösse der Disk auf 80 GB. Kontrollieren Sie, dass unten "Split virtual disk into multiple files" ausgewählt ist. Klicken Sie auf Next.
+Klicken Sie auf "Customize Hardware"
+Klicken Sie auf das Gerät Memory links in der Tabelle. Erhöhen Sie bei "Memory for this virtual machine" auf 8192MB. Klicken Sie auf Close.
+Kontrollieren Sie, dass unten der Hacken bei "Power on this virtual machine after creation". Klicken Sie auf Finish.
+
+Anschliessend startet die Virtuelle Maschiene und beginnt mit der installation des Betriebssystems.
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Ubuntu installieren:
+
+Wenn die installation des Betriebssystem durchgelaufen ist, wird ein Fenster mit den Tastatureinstellungen gezeigt.
+
+Dort müssen Sie das Tastaturlayout "Switzerland" auf der linken Seite auswählen.
+Anschliessend auf "Continue" klicken.
+Bei Updates and other Software auf "Continue" klicken.
+Danach müssen Sie bei Installation Type kontrollieren, dass "Erase disk and install ubuntu" ausgewählt ist. Anschliessend auf "Install Now" klicken.
+Beim Hinweis "Write the changes to disks?" auf "Continue" klicken.
+Wenn die standard Zeitzone für Sie stimmt, können Sie auf "Continue" klicken, ansonsten zuerst die Zeitzone ändern, indem man den Pin in der Kart zu sich setzt. Dann auf "Continue" klicken.
+Geben Sie einen Namen, Computername, Username und Passwort ein. Anschliessend auf "Continue" klicken.
+Beim Hinweis "Installation Complete" auf "Restart Now" klicken.
+
+Anschliessend startet die Virtuelle Maschiene neu.
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Plex herunterladen:
+
+Wenn der Server neugestartet hat, können Sie sich mit dem Passwort, das sie zuvor gesetzt haben, einloggen. Danach befinden Sie sich auf dem Desktop.
+Dort stossen Sie auf ein offenes Fenster indem Accounts eingebunden werden können. Drücke Sie auf "Skip", "Next", "Next", "Done" um das ganze zu überspringen.
+Beim Hinweis für Software Updates können Sie auf "Reminde me later" klicken.
+
+Danach öffnen Sie ein Terminal mit "CTRL + ALT + T"
+Geben Sie den Befehl "sudo apt update" ein und drücken Sie ENTER. Danach müssen Sie Ihr Passwort eingeben und mit ENTER abschliessen.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt upgrade" ein und drücken Sie ENTER.
+Bei "Do you want to Continue?" müssen Sie Y eingeben und ENTER drücken.
+Wenn ein Hinweis kommt, dass man neustarten muss, auf "Reboot now" klicken.
+Wenn man wieder im Terminal ist, geben Sie den Befehl "sudo apt install curl" ein und drücken Sie ENTER. Wenn Sie neugestartet haben, müssen Sie Ihr Passwort eingeben und mit ENTER abschliessen.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "curl https://downloads.plex.tv/plex-keys/PlexSign.key | gpg --dearmor | sudo tee /usr/share/keyrings/plex-archive-keyring.gpg >/dev/null" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "echo deb [signed-by=/usr/share/keyrings/plex-archive-keyring.gpg] https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plex.list" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt update" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo apt upgrade" ein und drücken Sie ENTER.
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Plex installieren:
+
+Wenn Plex heruntergeladen wurde, kann man im gleichen Terminal mit der Installation weiterfahren.
+
+Geben Sie den Befehl "sudo apt install plexmediaserver" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "find /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/ -type d -exec chmod 755 {} +" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "find /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/ -type f -exec chmod 644 {} +" ein und drücken Sie ENTER.
+Wenn der Befehl durchgelaufen ist, geben Sie den Befehl "sudo nano /etc/ufw/applications.d/plexmediaserver" Enter " ein und drücken Sie ENTER.
+In Dieser Datei müssen die Firewall konfigurationen eingetragen werden, diese finden Sie im Dokument m239/main/firewall.
+Wenn diese Einträge kopiert wurden, kann man mit "CTRL + X", dann "Y" und dann ENTER die Datei speichern.
+Anschliessend muss man den Befehl "sudo ufw app update plexmediaserver" eingeben und mit ENTER bestätigen.
+Zudem muss man den Befehl "sudo ufw app update plexmediaserver-additional" eingeben und mit ENTER bestätigen.
+Zum Schluss muss man noch die Firewall neuladen, dies macht man mit dem Befehl "sudo systemctl restart ufw"
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Bei Plex einloggen
+
+Wenn Plex korrekt installiert wurde, kann man nun die Webseite in der Virtuellen Maschiene, in einem Browser mit "http://localhost:32400/web" öffnen.
+Dort sieht man nun das Plex Web interface. Loggen Sie Sich mit ihrem Google Account ein. Klicken Sie auf "Continue with Google".
+Anschiessend müssen Sie ihre E-Mail Adresse Ihres Google Accounts eingeben und auf "Next" klicken.
+Danach müssen Sie ihr Passwort von Ihrem Google Accounts eingeben und auf "Next" klicken.
+Bei der Warnung muss man auf "Advanced" klicken, dann herunter scrolen und dann auf "Accept the Risk and continue".
+Nach erfolgreichem einloggen, sehen Sie eine Einführung von Plex. Klicken Sie auf "Got it".
+Anschliessend kann man das Angebot von Plex Pass obe rechts mit dem Kreuz ablehnen.
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Plex konfigurieren
+
+Wenn Sie sich korrekt eigeloggt haben, können Sie den Plex Server konfigurieren.
+Sie sollte nun eine Plex Server Setup Webseite im Broswer offen haben. Tragen Sie einen Namen ein un klicken Sie auf "Next".
+Anschliessend kann man eine Bibliothek hinzufügen. Dies überspringen wir mit "Next".
+Schliessen Sie das Setup mit "Finish" ab.
+Zum Schluss müssen Sie nochmals auf "Finish Setup" klicken.
+
+Danach ist man fertig mit der installation und dem Server.
+______________________________________________________________________________________________________________________________________________________________________________________
+
+Plugin installieren
+
+Mit einem Plugin kann man Streaming Dienste wie Disney+, Netflix oder ähnliches in das Plexsortiment nehmen.
+
+Klicken Sie links inder Navigation auf "Discover".
+Auf dieser Seite steht zuoberst Discover. Klicken Sie auf die drei Punkte daneben.
+Wählen Sie "Manage Streaming Services" aus.
+Suchen Sie ihr Streaming Dienst, den Sie einbinden wollen und klicken Sie darauf.
+Anschliessend klicken Sie auf "Save Changes".
+
+Somit kann man nun schauen, was auf diesen Streaming Diensten angeboten und viel geschaut wird.
