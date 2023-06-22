@@ -67,11 +67,12 @@ ________________________________________________________________________________
 
 Bei Plex einloggen
 
-Wenn Plex korrekt installiert wurde, kann man nun die Webseite in der Virtuellen Maschiene, in einem Browser mit "http://localhost:32400" öffnen.
+Wenn Plex korrekt installiert wurde, kann man nun die Webseite in der Virtuellen Maschiene, in einem Browser mit "http://localhost:32400/web" öffnen.
 Dort sieht man nun das Plex Web interface. Loggen Sie Sich mit ihrem Google Account ein. Klicken Sie auf "Continue with Google".
 Anschiessend müssen Sie ihre E-Mail Adresse Ihres Google Accounts eingeben und auf "Next" klicken.
 Danach müssen Sie ihr Passwort von Ihrem Google Accounts eingeben und auf "Next" klicken.
 Nach erfolgreichem einloggen, sehen Sie eine Einführung von Plex. Klicken Sie auf "Got it".
+Anschliessend kann man das Angebot von Plex Pass obe rechts mit dem Kreuz ablehnen.
 ______________________________________________________________________________________________________________________________________________________________________________________
 
 Plex konfigurieren
