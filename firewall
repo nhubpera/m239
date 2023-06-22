@@ -1,9 +1,0 @@
-[plexmediaserver]
-title=Plex Media Server (Standard)
-description=The Plex Media Server
-ports=32400/tcp
-
-[plexmediaserver-additional]
-title=Plex Media Server (Additional)
-description=The Plex Media Server (Additional Ports)
-ports=5353/udp|8324/tcp|32410:32414/udp|1900/udp|32469/tcp
